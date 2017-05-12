@@ -3,8 +3,6 @@ import java.util.Random;
 public class main {
 	
 	public int[] frame(){
-		System.out.println("Frame Function");
-		
 		int frame[] = new int[2];
 		Random rand = new Random();
 		
@@ -15,5 +13,11 @@ public class main {
 		frame[1] = k;
 		
 		return frame;
+	}
+	
+	public int frameScore(int[] frame){		
+		int frameScore = frame[0] + frame[1];
+
+		return frameScore;
 	}
 }

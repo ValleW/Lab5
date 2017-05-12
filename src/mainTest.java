@@ -13,6 +13,7 @@ public class mainTest {
 		assertTrue(frameResult[0] <= 10);
 		assertTrue(frameResult[1] <= 10 - frameResult[0]);
 		
+		/* Prints for readability */
 		for(int p = 0; p < 2; p++){
 			System.out.println(frameResult[p]);
 		}
@@ -28,5 +29,10 @@ public class mainTest {
 		
 		assertTrue(instance.frameScore(frameResult) <= 10);
 		
+		/* Prints for readability */
+		for(int p = 0; p < 2; p++){
+			System.out.println(frameResult[p]);
+		}
+		System.out.println(instance.frameScore(frameResult));
 	}
 }
