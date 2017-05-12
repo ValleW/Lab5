@@ -14,9 +14,7 @@ public class mainTest {
 		assertTrue(frameResult[1] <= 10 - frameResult[0]);
 		
 		/* Prints for readability */
-		for(int p = 0; p < 2; p++){
-			System.out.println(frameResult[p]);
-		}
+		System.out.println("F1:" + frameResult[0] + "\nF2:" + frameResult[1]);
 	}
 	
 	@Test
@@ -30,9 +28,21 @@ public class mainTest {
 		assertTrue(instance.frameScore(frameResult) <= 10);
 		
 		/* Prints for readability */
-		for(int p = 0; p < 2; p++){
+		System.out.println("F1:" + frameResult[0] + "\nF2:" + frameResult[1]);
+		System.out.println("Total: " + instance.frameScore(frameResult));
+	}
+	
+	@Test
+	public void testGameFrames(){
+		System.out.println("-- Testing Game Frames --");
+		main instance = new main();
+		
+		int[] gameResult = new int[10];
+		frameResult = instance.game();
+		
+		/* prints for readability */
+		for(int p = 0; p < 10; p++){
 			System.out.println(frameResult[p]);
 		}
-		System.out.println(instance.frameScore(frameResult));
 	}
 }

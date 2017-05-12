@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class main {
-	
+
 	public int[] frame(){
 		int frame[] = new int[2];
 		Random rand = new Random();
