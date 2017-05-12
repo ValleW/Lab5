@@ -18,5 +18,4 @@ public class mainTest {
 			System.out.println(frameResult[p]);
 		}
 	}
-
 }
