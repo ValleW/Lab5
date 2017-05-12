@@ -5,14 +5,13 @@ public class mainTest {
 
 	@Test
 	public void testFrame() {
-		System.out.println("-- Testing Frames --");
+		System.out.println("-- Testing Frame --");
 		main instance = new main();
 		int[] frameResult = new int[2];
 		frameResult = instance.frame();
 		
-		int totalValue = frameResult[0] + frameResult[1];
-		
-		assertTrue(totalValue <= 10);
+		assertTrue(frameResult[0] <= 10);
+		assertTrue(frameResult[1] <= 10 - frameResult[0]);
 		
 		for(int p = 0; p < 2; p++){
 			System.out.println(frameResult[p]);
