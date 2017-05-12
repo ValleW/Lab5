@@ -37,12 +37,13 @@ public class mainTest {
 		System.out.println("-- Testing Game Frames --");
 		main instance = new main();
 		
-		int[] gameResult = new int[10];
-		frameResult = instance.game();
+		int[][] gameResult = new int[10][2];
+		gameResult = instance.game();
 		
 		/* prints for readability */
+		System.out.print("Frames: ");
 		for(int p = 0; p < 10; p++){
-			System.out.println(frameResult[p]);
+			System.out.print(gameResult[p][0] + ", " + gameResult[p][1] + " | ");
 		}
 	}
 }

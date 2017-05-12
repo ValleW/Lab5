@@ -20,4 +20,19 @@ public class main {
 
 		return frameScore;
 	}
+	
+	public int[][] game(){
+		int[][] game = new int[10][2];
+		Random rand = new Random();
+		
+		for(int i = 0; i < 10; i++){
+			int randOne = rand.nextInt(10);
+			int randTwo = rand.nextInt(11-randOne);
+			
+			game[i][0] = randOne;
+			game[i][1] = randTwo;
+		}
+		
+		return game;
+	}
 }
