@@ -17,4 +17,16 @@ public class mainTest {
 			System.out.println(frameResult[p]);
 		}
 	}
+	
+	@Test
+	public void testFrameScore(){
+		System.out.println("-- Testing Frame Score --");
+		main instance = new main();
+		
+		int[] frameResult = new int[2];
+		frameResult = instance.frame();
+		
+		assertTrue(instance.frameScore(frameResult) <= 10);
+		
+	}
 }
