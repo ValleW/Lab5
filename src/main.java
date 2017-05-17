@@ -13,6 +13,7 @@ public class main {
 		frame[1] = k;
 		
 		return frame;
+		//test
 	}
 	
 	public int frameScore(int[] frame){		
