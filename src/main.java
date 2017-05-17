@@ -13,7 +13,6 @@ public class main {
 		frame[1] = k;
 		
 		return frame;
-		//test
 	}
 	
 	public int frameScore(int[] frame){		
@@ -35,5 +34,9 @@ public class main {
 		}
 		
 		return game;
+	}
+
+	public void gameScore(int[][] game) {
+		System.out.println("Game Score");
 	}
 }

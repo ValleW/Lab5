@@ -46,4 +46,18 @@ public class mainTest {
 			System.out.print(gameResult[p][0] + ", " + gameResult[p][1] + " | ");
 		}
 	}
+	
+	@Test
+	public void testGameScore() {
+		System.out.println("\n-- Testing Game Score --");
+		int[][] game = new int[10][2];
+		for(int i = 0; i < 10; i++) {
+			game[i][0] = 1;
+			game[i][1] = 2;
+		}
+		int score = 0;
+		/* prints for readability */
+		System.out.print("score: " + score);
+		assertTrue(score == 30);
+	}
 }
