@@ -36,7 +36,12 @@ public class main {
 		return game;
 	}
 
-	public void gameScore(int[][] game) {
-		System.out.println("Game Score");
+	public int gameScore(int[][] game) {
+		int score = 0;
+		for(int i = 0; i < 10; i++){
+			score+= game[i][0];
+			score+= game[i][1];
+		}	
+		return score;
 	}
 }
