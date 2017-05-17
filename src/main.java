@@ -38,10 +38,8 @@ public class main {
 
 	public int gameScore(int[][] game) {
 		int score = 0;
-		for(int i = 0; i < 10; i++){
-			score+= game[i][0];
-			score+= game[i][1];
-		}	
+		for(int i = 0; i < 10; i++)
+			score += game[i][0] + game[i][1];
 		return score;
 	}
 }
