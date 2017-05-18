@@ -121,12 +121,34 @@ public class mainTest {
 		// Set first to a Strike
 		game[0][0] = 10;
 		game[0][1] = 0;
-		// Set second to a Strike
+		// Set second to a Spare
 		game[1][0] = 4;
 		game[1][1] = 6;
 		int score = instance.gameScore(game);
 		/* prints for readability */
 		System.out.print("score: " + score + "\n");
 		assertTrue(score == 64);
+	}
+	
+	@Test
+	public void testMultipleStrikes() {
+		System.out.println("\n-- Testing Multiple Strikes --");
+		main instance = new main();
+		int[][] game = new int[10][2];
+		// Fill it with specific numbers so we can verify the score
+		for(int i = 0; i < 10; i++) {
+			game[i][0] = 2;
+			game[i][1] = 2;
+		}
+		// Set first to a Strike
+		game[0][0] = 10;
+		game[0][1] = 0;
+		// Set second to a Strike
+		game[1][0] = 10;
+		game[1][1] = 0;
+		int score = instance.gameScore(game);
+		/* prints for readability */
+		System.out.print("score: " + score + "\n");
+		assertTrue(score == 68);
 	}
 }
