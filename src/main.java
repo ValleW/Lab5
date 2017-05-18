@@ -28,9 +28,8 @@ public class main {
 		for(int i = 0; i < 10; i++){
 			int randOne = rand.nextInt(10);
 			int randTwo = rand.nextInt(11-randOne);
-			
-			game[i][0] = randOne;
-			game[i][1] = randTwo;
+
+			game[i] = new int[] {randOne, randTwo};
 		}
 		
 		return game;
