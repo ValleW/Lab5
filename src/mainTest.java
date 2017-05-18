@@ -222,7 +222,7 @@ public class mainTest {
 	
 	@Test
 	public void testBestScore() {
-		System.out.println("\n-- Testing BestScore --");
+		System.out.println("\n-- Testing Best Score --");
 		main instance = new main();
 		int[][] game = new int[10][2];
 		
@@ -234,5 +234,29 @@ public class mainTest {
 		/* prints for readability */
 		System.out.print("score: " + score + "\n");
 		assertTrue(score == 300);
+	}
+	
+	@Test
+	public void testRealGame() {
+		System.out.println("\n-- Testing Real Game --");
+		main instance = new main();
+		int[][] game = new int[10][2];
+		
+		// Fill it with specific numbers so we can verify the score
+		game[0] = new int[] {6, 3};
+		game[1] = new int[] {7, 1};
+		game[2] = new int[] {8, 2};
+		game[3] = new int[] {7, 2};
+		game[4] = new int[] {10, 0};
+		game[5] = new int[] {6, 2};
+		game[6] = new int[] {7, 3};
+		game[7] = new int[] {10, 0};
+		game[8] = new int[] {8, 0};
+		game[9] = new int[] {7, 3};
+		
+		int score = instance.gameScore(game, new int[] {10, 0});
+		/* prints for readability */
+		System.out.print("score: " + score + "\n");
+		assertTrue(score == 135);
 	}
 }
