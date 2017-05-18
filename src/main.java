@@ -42,4 +42,10 @@ public class main {
 			score += game[i][0] + game[i][1];
 		return score;
 	}
+
+	public boolean isStrike(int[][] game) {
+		if(game[0][0] == 10 && game[0][1] == 0)
+			return true;
+		return false;
+	}
 }
