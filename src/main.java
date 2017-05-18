@@ -35,7 +35,7 @@ public class main {
 		return game;
 	}
 
-	public int gameScore(int[][] game) {
+	public int gameScore(int[][] game, int[] forcedBonus) {
 		int score = 0;
 		for(int i = 0; i < 10; i++) {
 			// If i is a strike
