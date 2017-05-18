@@ -219,4 +219,20 @@ public class mainTest {
 		System.out.print("score: " + score + ", bonus was: " + (score - 46) + "\n");
 		assertTrue(score == 56);
 	}
+	
+	@Test
+	public void testBestScore() {
+		System.out.println("\n-- Testing BestScore --");
+		main instance = new main();
+		int[][] game = new int[10][2];
+		
+		// Fill it with specific numbers so we can verify the score
+		for(int i = 0; i < 10; i++)
+			game[i] = new int[] {10, 0};
+		
+		int score = instance.gameScore(game, new int[] {10, 0});
+		/* prints for readability */
+		System.out.print("score: " + score + "\n");
+		assertTrue(score == 300);
+	}
 }
