@@ -71,6 +71,6 @@ public class mainTest {
 		game[0][1] = 0;
 		/* prints for readability */
 		System.out.println("Testing: |10, 0|");
-		assertTrue(instance.isStrike(game) == true);
+		assertTrue(instance.isStrike(game));
 	}
 }

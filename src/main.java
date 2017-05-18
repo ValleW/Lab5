@@ -44,8 +44,6 @@ public class main {
 	}
 
 	public boolean isStrike(int[][] game) {
-		if(game[0][0] == 10 && game[0][1] == 0)
-			return true;
-		return false;
+		return(game[0][0] == 10 && game[0][1] == 0);
 	}
 }
