@@ -43,6 +43,10 @@ public class main {
 				score += 10;
 				if(i+1 < 10)
 					score += game[i+1][0] + game[i+1][1];
+			} else if(isSpare(game[i][0], game[i][1])) {
+				score += 10;
+				if(i+1 < 10)
+					score += game[i+1][0];
 			} else {
 				score += game[i][0] + game[i][1];
 			}
@@ -52,5 +56,9 @@ public class main {
 
 	public boolean isStrike(int a, int b) {
 		return(a == 10 && b == 0);
+	}
+
+	public boolean isSpare(int a, int b) {
+		return(a + b == 10);
 	}
 }

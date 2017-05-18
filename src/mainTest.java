@@ -104,7 +104,7 @@ public class mainTest {
 		game2[0][1] = 9;
 		int score = instance.gameScore(game2);
 		/* prints for readability */
-		System.out.print("score: " + score);
+		System.out.print("score: " + score + "\n");
 		assertTrue(score == 77);
 	}
 }
