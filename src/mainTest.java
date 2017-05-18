@@ -71,14 +71,21 @@ public class mainTest {
 		game[0][1] = 0;
 		/* prints for readability */
 		System.out.println("Testing: |10, 0|");
-		assertTrue(instance.isStrike(game));
+		assertTrue(instance.isStrike(game[0][0], game[0][1]));
 
-		System.out.println("Testing: |10, 0| |3, 6|");
-		int[][] game2 = new int[2][2];
-		game[0][0] = 10;
-		game[0][1] = 0;
-		game[1][0] = 3;
-		game[1][1] = 6;
-		assertTrue(instance.gameScore(game2) == 19);
+		// Create the game to test
+		int[][] game2 = new int[10][2];
+		// Fill it with specific numbers so we can verify the score
+		for(int i = 0; i < 10; i++) {
+			game2[i][0] = 1;
+			game2[i][1] = 2;
+		}
+		// Set first to a strike
+		game2[0][0] = 10;
+		game2[0][1] = 0;
+		int score = instance.gameScore(game2);
+		/* prints for readability */
+		System.out.print("score: " + score);
+		assertTrue(score == 40);
 	}
 }

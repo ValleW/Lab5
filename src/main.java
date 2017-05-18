@@ -38,12 +38,19 @@ public class main {
 
 	public int gameScore(int[][] game) {
 		int score = 0;
-		for(int i = 0; i < 10; i++)
-			score += game[i][0] + game[i][1];
+		for(int i = 0; i < 10; i++) {
+			if(isStrike(game[i][0], game[i][1])) {
+				score += 10;
+				if(i+1 < 10)
+					score += game[i+1][0] + game[i+1][1];
+			} else {
+				score += game[i][0] + game[i][1];
+			}
+		}
 		return score;
 	}
 
-	public boolean isStrike(int[][] game) {
-		return(game[0][0] == 10 && game[0][1] == 0);
+	public boolean isStrike(int a, int b) {
+		return(a == 10 && b == 0);
 	}
 }
