@@ -61,4 +61,16 @@ public class mainTest {
 		System.out.print("score: " + score);
 		assertTrue(score == 30);
 	}
+	
+	@Test
+	public void testStrike() {
+		System.out.println("\n-- Testing Strike --");
+		main instance = new main();
+		int[][] game = new int[1][2];
+		game[0][0] = 10;
+		game[0][1] = 0;
+		/* prints for readability */
+		System.out.println("Testing: |10, 0|");
+		assertTrue(instance.isStrike(game) == true);
+	}
 }
