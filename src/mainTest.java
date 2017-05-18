@@ -160,4 +160,24 @@ public class mainTest {
 		System.out.print("score: " + score + "\n");
 		assertTrue(score == 56);
 	}
+	
+	@Test
+	public void testSpareAsTheLastFrame() {
+		System.out.println("\n-- Testing Spare as the Last Frame --");
+		main instance = new main();
+		int[][] game = new int[10][2];
+		
+		// Fill it with specific numbers so we can verify the score
+		for(int i = 0; i < 10; i++)
+			game[i] = new int[] {2, 2};
+		
+		// Set last frame to a Spare
+		game[9] = new int[] {3, 7};
+		
+		int score = instance.gameScore(game);
+		/* prints for readability */
+		System.out.print("score: " + score + ", bonus was: " + (score - 46) + "\n");
+		// bonus can be 0-10, so we add that as the interval
+		assertTrue(score >= 46 && score <= 56);
+	}
 }
