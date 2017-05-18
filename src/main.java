@@ -40,12 +40,12 @@ public class main {
 		int score = 0;
 		for(int i = 0; i < 10; i++) {
 			// If i is a strike
-			if(isStrike(game[i][0], game[i][1])) {
+			if(isStrike(game[i])) {
 				score += 10;
 				// If there's a frame after i, check for another strike and increase score according to user stories
 				if(i+1 < 10) {
 					// Check for secondary strike
-					if(isStrike(game[i+1][0], game[i+1][1])) {
+					if(isStrike(game[i+1])) {
 						score += 10;
 						// check if there's a frame after this strike
 						if(i+2 < 10) {
@@ -53,26 +53,26 @@ public class main {
 							score += game[i+2][0];
 						}
 					} else {
-						score += game[i+1][0] + game[i+1][1];
+						score += frameScore(game[i+1]);
 					}
 				}
-			} else if(isSpare(game[i][0], game[i][1])) { // If i is a spare
+			} else if(isSpare(game[i])) { // If i is a spare
 				// Add 10 and if there's a frame after i, add the first throw from that frame
 				score += 10;
 				if(i+1 < 10)
 					score += game[i+1][0];
 			} else { // if i is anything else
-				score += game[i][0] + game[i][1];
+				score += frameScore(game[i]);
 			}
 		}
 		return score;
 	}
 
-	public boolean isStrike(int a, int b) {
-		return(a == 10 && b == 0);
+	public boolean isStrike(int[] frame) {
+		return(frame[0] == 10 && frame[1] == 0);
 	}
 
-	public boolean isSpare(int a, int b) {
-		return(a + b == 10);
+	public boolean isSpare(int[] frame) {
+		return(frame[0] + frame[1] == 10);
 	}
 }

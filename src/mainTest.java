@@ -51,11 +51,11 @@ public class mainTest {
 	public void testGameScore() {
 		System.out.println("\n-- Testing Game Score --");
 		main instance = new main();
+		
 		int[][] game = new int[10][2];
-		for(int i = 0; i < 10; i++) {
-			game[i][0] = 1;
-			game[i][1] = 2;
-		}
+		for(int i = 0; i < 10; i++)
+			game[i] = new int[] {1, 2};
+		
 		int score = instance.gameScore(game);
 		/* prints for readability */
 		System.out.print("score: " + score);
@@ -66,24 +66,17 @@ public class mainTest {
 	public void testStrike() {
 		System.out.println("\n-- Testing Strike --");
 		main instance = new main();
-		int[][] game = new int[1][2];
-		game[0][0] = 10;
-		game[0][1] = 0;
-		/* prints for readability */
 		System.out.println("Testing: |10, 0|");
-		assertTrue(instance.isStrike(game[0][0], game[0][1]));
+		assertTrue(instance.isStrike(new int[] {10, 0}));
 
-		// Create the game to test
-		int[][] game2 = new int[10][2];
-		// Fill it with specific numbers so we can verify the score
-		for(int i = 0; i < 10; i++) {
-			game2[i][0] = 1;
-			game2[i][1] = 2;
-		}
-		// Set first to a strike
-		game2[0][0] = 10;
-		game2[0][1] = 0;
-		int score = instance.gameScore(game2);
+		// Create a prefilled game with specific numbers so we can verify the score
+		int[][] game = new int[10][2];
+		for(int i = 0; i < 10; i++)
+			game[i] = new int[] {1, 2};
+		// Set first frame to a strike
+		game[0] = new int[] {10, 0};
+		
+		int score = instance.gameScore(game);
 		/* prints for readability */
 		System.out.print("score: " + score);
 		assertTrue(score == 40);
@@ -94,14 +87,14 @@ public class mainTest {
 		System.out.println("\n-- Testing Spare --");
 		main instance = new main();
 		int[][] game = new int[10][2];
+		
 		// Fill it with specific numbers so we can verify the score
-		for(int i = 0; i < 10; i++) {
-			game[i][0] = 4;
-			game[i][1] = 3;
-		}
-		// Set first to a Spare
-		game[0][0] = 1;
-		game[0][1] = 9;
+		for(int i = 0; i < 10; i++)
+			game[i] = new int[] {4, 3};
+		
+		// Set first frame to a Spare
+		game[0] = new int[] {1, 9};
+		
 		int score = instance.gameScore(game);
 		/* prints for readability */
 		System.out.print("score: " + score + "\n");
@@ -113,17 +106,15 @@ public class mainTest {
 		System.out.println("\n-- Testing Strike And Spare --");
 		main instance = new main();
 		int[][] game = new int[10][2];
+		
 		// Fill it with specific numbers so we can verify the score
-		for(int i = 0; i < 10; i++) {
-			game[i][0] = 2;
-			game[i][1] = 2;
-		}
-		// Set first to a Strike
-		game[0][0] = 10;
-		game[0][1] = 0;
-		// Set second to a Spare
-		game[1][0] = 4;
-		game[1][1] = 6;
+		for(int i = 0; i < 10; i++) 
+			game[i] = new int[] {2, 2};
+		
+		// Set first frame to a Strike and second frame to a Spare
+		game[0] = new int[] {10, 0};
+		game[1] = new int[] {4, 6};
+		
 		int score = instance.gameScore(game);
 		/* prints for readability */
 		System.out.print("score: " + score + "\n");
@@ -135,17 +126,15 @@ public class mainTest {
 		System.out.println("\n-- Testing Multiple Strikes --");
 		main instance = new main();
 		int[][] game = new int[10][2];
+		
 		// Fill it with specific numbers so we can verify the score
-		for(int i = 0; i < 10; i++) {
-			game[i][0] = 2;
-			game[i][1] = 2;
-		}
-		// Set first to a Strike
-		game[0][0] = 10;
-		game[0][1] = 0;
-		// Set second to a Strike
-		game[1][0] = 10;
-		game[1][1] = 0;
+		for(int i = 0; i < 10; i++)
+			game[i] = new int[] {2, 2};
+		
+		// Set first and second frame to a Strike
+		game[0] = new int[] {10, 0};
+		game[1] = new int[] {10, 0};
+		
 		int score = instance.gameScore(game);
 		/* prints for readability */
 		System.out.print("score: " + score + "\n");
@@ -157,17 +146,15 @@ public class mainTest {
 		System.out.println("\n-- Testing Multiple Spares --");
 		main instance = new main();
 		int[][] game = new int[10][2];
+		
 		// Fill it with specific numbers so we can verify the score
-		for(int i = 0; i < 10; i++) {
-			game[i][0] = 2;
-			game[i][1] = 2;
-		}
-		// Set first to a Strike
-		game[0][0] = 3;
-		game[0][1] = 7;
-		// Set second to a Strike
-		game[1][0] = 2;
-		game[1][1] = 8;
+		for(int i = 0; i < 10; i++)
+			game[i] = new int[] {2, 2};
+		
+		// Set first and second frame to a Spare
+		game[0] = new int[] {3, 7};
+		game[1] = new int[] {2, 8};
+		
 		int score = instance.gameScore(game);
 		/* prints for readability */
 		System.out.print("score: " + score + "\n");
