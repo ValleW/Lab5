@@ -93,18 +93,40 @@ public class mainTest {
 	public void testSpare() {
 		System.out.println("\n-- Testing Spare --");
 		main instance = new main();
-		int[][] game2 = new int[10][2];
+		int[][] game = new int[10][2];
 		// Fill it with specific numbers so we can verify the score
 		for(int i = 0; i < 10; i++) {
-			game2[i][0] = 4;
-			game2[i][1] = 3;
+			game[i][0] = 4;
+			game[i][1] = 3;
 		}
 		// Set first to a Spare
-		game2[0][0] = 1;
-		game2[0][1] = 9;
-		int score = instance.gameScore(game2);
+		game[0][0] = 1;
+		game[0][1] = 9;
+		int score = instance.gameScore(game);
 		/* prints for readability */
 		System.out.print("score: " + score + "\n");
 		assertTrue(score == 77);
+	}
+	
+	@Test
+	public void testStrikeAndSpare() {
+		System.out.println("\n-- Testing Strike And Spare --");
+		main instance = new main();
+		int[][] game = new int[10][2];
+		// Fill it with specific numbers so we can verify the score
+		for(int i = 0; i < 10; i++) {
+			game[i][0] = 2;
+			game[i][1] = 2;
+		}
+		// Set first to a Strike
+		game[0][0] = 10;
+		game[0][1] = 0;
+		// Set second to a Strike
+		game[1][0] = 4;
+		game[1][1] = 6;
+		int score = instance.gameScore(game);
+		/* prints for readability */
+		System.out.print("score: " + score + "\n");
+		assertTrue(score == 64);
 	}
 }
