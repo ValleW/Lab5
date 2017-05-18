@@ -197,7 +197,7 @@ public class mainTest {
 		int score = instance.gameScore(game);
 		/* prints for readability */
 		System.out.print("score: " + score + ", bonus was: " + (score - 46) + "\n");
-		// bonus can be 0-20, so we add that as the interval
-		assertTrue(score >= 46 && score <= 66);
+		// bonus can be 0-10, so we add that as the interval
+		assertTrue(score >= 46 && score <= 56);
 	}
 }

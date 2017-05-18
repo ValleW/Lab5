@@ -57,7 +57,7 @@ public class main {
 				} else {
 					// Just create 2 frames and get the first number in it, since that's a "clean" throw
 					// for easiness and without having to create a new Random to generate the numbers
-					score += frame()[0] + frame()[0]; 
+					score += frame()[0] + frame()[1]; 
 				}
 			} else if(isSpare(game[i])) { // If i is a spare
 				// Add 10 and if there's a frame after i, add the first throw from that frame
