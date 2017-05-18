@@ -151,4 +151,26 @@ public class mainTest {
 		System.out.print("score: " + score + "\n");
 		assertTrue(score == 68);
 	}
+	
+	@Test
+	public void testMultipleSpares() {
+		System.out.println("\n-- Testing Multiple Spares --");
+		main instance = new main();
+		int[][] game = new int[10][2];
+		// Fill it with specific numbers so we can verify the score
+		for(int i = 0; i < 10; i++) {
+			game[i][0] = 2;
+			game[i][1] = 2;
+		}
+		// Set first to a Strike
+		game[0][0] = 3;
+		game[0][1] = 7;
+		// Set second to a Strike
+		game[1][0] = 2;
+		game[1][1] = 8;
+		int score = instance.gameScore(game);
+		/* prints for readability */
+		System.out.print("score: " + score + "\n");
+		assertTrue(score == 56);
+	}
 }
