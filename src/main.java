@@ -36,10 +36,17 @@ public class main {
 	}
 
 	public int gameScore(int[][] game, int[] forcedBonus) {
+		// Create 2 frames and change them if forcedBonus isn't null (used in test cases)
+		int[] bonus1 = frame();
+		int[] bonus2 = frame();
+		if(forcedBonus != null) {
+			bonus1 = forcedBonus;
+			bonus2 = forcedBonus;
+		}
+		
 		int score = 0;
 		for(int i = 0; i < 10; i++) {
-			// If i is a strike
-			if(isStrike(game[i])) {
+			if(isStrike(game[i])) { // Check for first strike
 				score += 10;
 				// If there's a frame after i, check for another strike and increase score according to user stories
 				if(i+1 < 10) {
@@ -50,26 +57,32 @@ public class main {
 						if(i+2 < 10) {
 							// and add the first throw in that frame
 							score += game[i+2][0];
+						} else {
+							if(isStrike(bonus1))
+								score += 10;
 						}
 					} else {
 						score += frameScore(game[i+1]);
 					}
-				} else {
-					// Just create 2 frames and get the first number in it, since that's a "clean" throw
-					// for easiness and without having to create a new Random to generate the numbers
-					score += frame()[0] + frame()[1]; 
+				} else {					
+					if(isStrike(bonus1)) {
+						score+=10;
+						if(isStrike(bonus2)) {
+							score+=10;
+						} else {
+							score += bonus1[0] + bonus2[1]; 
+						}
+					} else {
+						score += bonus1[0] + bonus2[1]; 
+					}
 				}
-			} else if(isSpare(game[i])) { // If i is a spare
+			} else if(isSpare(game[i])) {
 				// Add 10 and if there's a frame after i, add the first throw from that frame
 				score += 10;
 				if(i+1 < 10) {
 					score += game[i+1][0];
 				} else {
-					int[] bonus = frame();
-					if(forcedBonus != null)
-						bonus = forcedBonus;
-					// Just create a frame for easiness and without having to create a new Random to generate the number
-					score += bonus[0]; 
+					score += bonus1[0]; 
 				}
 			} else { // if i is anything else
 				score += frameScore(game[i]);
