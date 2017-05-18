@@ -65,8 +65,11 @@ public class main {
 				if(i+1 < 10) {
 					score += game[i+1][0];
 				} else {
+					int[] bonus = frame();
+					if(forcedBonus != null)
+						bonus = forcedBonus;
 					// Just create a frame for easiness and without having to create a new Random to generate the number
-					score += frame()[0]; 
+					score += bonus[0]; 
 				}
 			} else { // if i is anything else
 				score += frameScore(game[i]);
