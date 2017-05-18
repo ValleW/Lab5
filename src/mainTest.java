@@ -72,5 +72,13 @@ public class mainTest {
 		/* prints for readability */
 		System.out.println("Testing: |10, 0|");
 		assertTrue(instance.isStrike(game));
+
+		System.out.println("Testing: |10, 0| |3, 6|");
+		int[][] game2 = new int[2][2];
+		game[0][0] = 10;
+		game[0][1] = 0;
+		game[1][0] = 3;
+		game[1][1] = 6;
+		assertTrue(instance.gameScore(game2) == 19);
 	}
 }
